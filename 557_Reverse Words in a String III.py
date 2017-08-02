@@ -25,7 +25,7 @@ class Solution(object):
         return s1.strip() #strip()去掉首尾空格
 
 #2 39ms one line python
-class Solution(object):
+class Solution1(object):
     def reverseWords(self, s):
         """
         :type s: str
@@ -35,3 +35,10 @@ class Solution(object):
         return ''.join(word[::-1] + ' ' for word in s.split()).strip()
         # return ' '.join(x[::-1] for x in s.split())
         # return ' '.join(s.split()[::-1])[::-1]
+
+s2 = Solution1()
+s = "Let's take  LeetCode    contest"
+print(s2.reverseWords(s))
+w3 = "contest   LeetCode  take Let's"
+
+
