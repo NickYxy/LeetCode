@@ -46,5 +46,39 @@ class Solution(object):
         :type t: TreeNode
         :rtype: str
         """
+        if not t:
+            return ''
+        left = '({})'.format(self.tree2str(t.left)) if (t.left or t.right) else ''
+        right = '({})'.format(self.tree2str(t.right)) if t.right else ''
+        return '{}{}{}'.format(t.val, left, right)
+
+'''
+We do this recursively.
+
+If the tree is empty, we return an empty string.
+We record each child as '(' + (string of child) + ')'
+If there is a right child but no left child, we still need to record '()' instead of empty string.
+def tree2str(self, t):
+    if not t: return ''
+    left = '({})'.format(self.tree2str(t.left)) if (t.left or t.right) else ''
+    right = '({})'.format(self.tree2str(t.right)) if t.right else ''
+    return '{}{}{}'.format(t.val, left, right)
+'''
 
 
+class Solution1(object):
+    def tree2str(self, t):
+        """
+        :type t: TreeNode
+        :rtype: str
+        """
+        if not t:
+            return ""
+        res = ""
+        left = self.tree2str(t.left)
+        right = self.tree2str(t.right)
+        if left or right:
+            res += "(%s)" % left
+        if right:
+            res += "(%s)" % right
+        return str(t.val) + res
