@@ -37,3 +37,12 @@ class Solution1(object):
             if nums[i] != 0:
                 nums[j], nums[i] = nums[i], nums[j]
                 j += 1
+
+class Solution2(object):
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        nums.sort(key=lambda x: 1 if x == 0 else 0)
+        #but Timsort is O(nlogn) in time and O(n) in memory. Overkill for this problem.
