@@ -25,3 +25,12 @@ class Solution(object):
         :type b: str
         :rtype: str
         """
+        a1 = int(a.split('+')[0])
+        a2 = int(a.split('+')[1][:-1])
+        b1 = int(b.split('+')[0])
+        b2 = int(b.split('+')[1][:-1])
+        return str((a1 * b1 - a2 * b2)) + '+' + str((a1 * b2 + a2 * b1)) + 'i'
+
+'''
+唯一的难点就是a和b的处理，用切片就可以把两个常数分解出来
+'''
