@@ -10,4 +10,3 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-        
